@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="88" viewBox="0 0 88 88">
+  <defs>
+    <filter id="패스_21388" x="39.115" y="36.273" width="39.884" height="39.884" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="타원_7" x="38.615" y="35.773" width="40.884" height="40.884" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="그룹_32222" data-name="그룹 32222" transform="translate(-1681 -362)">
+    <g id="그룹_31974" data-name="그룹 31974">
+      <rect id="사각형_43420" data-name="사각형 43420" width="88" height="88" rx="44" transform="translate(1681 362)" fill="#f5f5f5"/>
+      <g id="그룹_31968" data-name="그룹 31968" transform="translate(415.52 -177.985)">
+        <circle id="타원_6" data-name="타원 6" cx="11.489" cy="11.489" r="11.489" transform="translate(1297.729 562.827)" fill="#fff" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="패스_21387" data-name="패스 21387" d="M3,61.566a18.056,18.056,0,0,1,35.96-.308" transform="translate(1288.225 540.806)" fill="#fff" stroke="#6e6e6e" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <g transform="matrix(1, 0, 0, 1, 1265.48, 539.99)" filter="url(#패스_21388)">
+          <path id="패스_21388-2" data-name="패스 21388" d="M65.774,54.942A10.942,10.942,0,1,1,54.832,44,10.942,10.942,0,0,1,65.774,54.942" transform="translate(4.22 1.27)" fill="#707070"/>
+        </g>
+        <g transform="matrix(1, 0, 0, 1, 1265.48, 539.99)" filter="url(#타원_7)">
+          <circle id="타원_7-2" data-name="타원 7" cx="10.942" cy="10.942" r="10.942" transform="translate(48.12 45.27)" fill="none" stroke="#6f6f6f" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        </g>
+        <path id="패스_21389" data-name="패스 21389" d="M56,61.283l3.86,2.736L65.18,58" transform="translate(1264.221 534.918)" fill="none" stroke="#f7f1ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+        <path id="패스_21395" data-name="패스 21395" d="M-20033.93-13988.13h24.367" transform="translate(21325.002 14590.511)" fill="none" stroke="#6f6f6f" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>

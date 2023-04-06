@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
+  <defs>
+    <filter id="패스_21385" x="0" y="0" width="100" height="100" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="사각형_3335" data-name="사각형 3335" width="30.562" height="28.077" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="그룹_32220" data-name="그룹 32220" transform="translate(18 15)">
+    <g transform="matrix(1, 0, 0, 1, -18, -15)" filter="url(#패스_21385)">
+      <path id="패스_21385-2" data-name="패스 21385" d="M6,0H58a6,6,0,0,1,6,6V58a6,6,0,0,1-6,6H6a6,6,0,0,1-6-6V6A6,6,0,0,1,6,0Z" transform="translate(18 15)" fill="#fee500"/>
+    </g>
+    <g id="그룹_5053" data-name="그룹 5053" transform="translate(16.844 18.086)">
+      <g id="그룹_5052" data-name="그룹 5052" transform="translate(0 0)" clip-path="url(#clip-path)">
+        <path id="패스_10307" data-name="패스 10307" d="M15.281,0C6.841,0,0,5.408,0,12.08c0,4.343,2.9,8.149,7.249,10.278-.32,1.193-1.158,4.322-1.325,4.991-.207.831.3.82.639.6.263-.175,4.187-2.845,5.88-4a19.278,19.278,0,0,0,2.837.209c8.439,0,15.281-5.408,15.281-12.08S23.72,0,15.281,0" transform="translate(0 0)" fill="#371c1d"/>
+      </g>
+    </g>
+  </g>
+</svg>

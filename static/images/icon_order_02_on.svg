@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="88" viewBox="0 0 88 88">
+  <defs>
+    <filter id="패스_21392" x="16" y="14" width="57" height="63" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="그룹_32221" data-name="그룹 32221" transform="translate(-1553 -208)">
+    <g id="그룹_31973" data-name="그룹 31973" transform="translate(61 -336)">
+      <g id="그룹_31970" data-name="그룹 31970">
+        <rect id="사각형_43405" data-name="사각형 43405" width="88" height="88" rx="44" transform="translate(1492 544)" fill="#f7f1ff"/>
+        <g id="그룹_31967" data-name="그룹 31967" transform="translate(-65 -2)">
+          <g transform="matrix(1, 0, 0, 1, 1557, 546)" filter="url(#패스_21392)">
+            <g id="패스_21392-2" data-name="패스 21392" transform="translate(25 23)" fill="#f3edfb">
+              <path d="M 36 44.5 L 3 44.5 C 1.621500015258789 44.5 0.5 43.37850189208984 0.5 42 L 0.5 3 C 0.5 1.621500015258789 1.621500015258789 0.5 3 0.5 L 36 0.5 C 37.37850189208984 0.5 38.5 1.621500015258789 38.5 3 L 38.5 42 C 38.5 43.37850189208984 37.37850189208984 44.5 36 44.5 Z" stroke="none"/>
+              <path d="M 3 1 C 1.897201538085938 1 1 1.897201538085938 1 3 L 1 42 C 1 43.10279846191406 1.897201538085938 44 3 44 L 36 44 C 37.10279846191406 44 38 43.10279846191406 38 42 L 38 3 C 38 1.897201538085938 37.10279846191406 1 36 1 L 3 1 M 3 0 L 36 0 C 37.6568489074707 0 39 1.343151092529297 39 3 L 39 42 C 39 43.6568489074707 37.6568489074707 45 36 45 L 3 45 C 1.343151092529297 45 0 43.6568489074707 0 42 L 0 3 C 0 1.343151092529297 1.343151092529297 0 3 0 Z" stroke="none" fill="#9747ff"/>
+            </g>
+          </g>
+          <path id="패스_21394" data-name="패스 21394" d="M2,0H31a2,2,0,0,1,2,2V37a2,2,0,0,1-2,2H2a2,2,0,0,1-2-2V2A2,2,0,0,1,2,0Z" transform="translate(1586 573)" fill="#e0e0e0"/>
+          <g id="패스_21393" data-name="패스 21393" transform="translate(1585 572)" fill="#fff">
+            <path d="M 31 38.79999923706055 L 2 38.79999923706055 C 1.007480025291443 38.79999923706055 0.2000000029802322 37.99251937866211 0.2000000029802322 37 L 0.2000000029802322 2 C 0.2000000029802322 1.007480025291443 1.007480025291443 0.2000000029802322 2 0.2000000029802322 L 31 0.2000000029802322 C 31.99251937866211 0.2000000029802322 32.79999923706055 1.007480025291443 32.79999923706055 2 L 32.79999923706055 37 C 32.79999923706055 37.99251937866211 31.99251937866211 38.79999923706055 31 38.79999923706055 Z" stroke="none"/>
+            <path d="M 2 0.4000015258789062 C 1.117759704589844 0.4000015258789062 0.4000015258789062 1.117759704589844 0.4000015258789062 2 L 0.4000015258789062 37 C 0.4000015258789062 37.88224029541016 1.117759704589844 38.59999847412109 2 38.59999847412109 L 31 38.59999847412109 C 31.88224029541016 38.59999847412109 32.59999847412109 37.88224029541016 32.59999847412109 37 L 32.59999847412109 2 C 32.59999847412109 1.117759704589844 31.88224029541016 0.4000015258789062 31 0.4000015258789062 L 2 0.4000015258789062 M 2 0 L 31 0 C 32.10456848144531 0 33 0.8954315185546875 33 2 L 33 37 C 33 38.10456848144531 32.10456848144531 39 31 39 L 2 39 C 0.8954315185546875 39 0 38.10456848144531 0 37 L 0 2 C 0 0.8954315185546875 0.8954315185546875 0 2 0 Z" stroke="none" fill="#9747ff"/>
+          </g>
+          <rect id="사각형_43417" data-name="사각형 43417" width="23" height="2" rx="1" transform="translate(1590 574)" fill="#9747ff"/>
+          <line id="선_142" data-name="선 142" x2="23" transform="translate(1590 584)" fill="none" stroke="#9747ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <line id="선_143" data-name="선 143" x2="23" transform="translate(1590 592)" fill="none" stroke="#9747ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <line id="선_144" data-name="선 144" x2="23" transform="translate(1590 600)" fill="none" stroke="#9747ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+          <rect id="사각형_43418" data-name="사각형 43418" width="8" height="2" rx="1" transform="translate(1590 576) rotate(-90)" fill="#9747ff"/>
+          <rect id="사각형_43419" data-name="사각형 43419" width="8" height="2" rx="1" transform="translate(1611 576) rotate(-90)" fill="#9747ff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
