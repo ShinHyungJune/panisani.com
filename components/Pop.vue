@@ -1,5 +1,5 @@
 <template>
-    <div class="modal-box fixed" v-if="$store.state.pop">
+    <div class="modal-box fixed" v-if="pop">
         <div class="box">
             <h2 v-if="pop.title">{{ pop.title }}</h2>
             <p v-if="pop.description">{{ pop.description}}</p>
@@ -21,6 +21,7 @@ export default {
         close(){
             this.$store.commit("setPop", null);
         }
-    }
+    },
+
 }
 </script>

@@ -5,7 +5,6 @@
 .toastui-editor-mode-switch .tab-item {display:none !important;}
 </style>
 <script>
-
 export default {
     components: {},
 
@@ -28,20 +27,14 @@ export default {
                     useCommandShortcut: true,
                     usageStatistics: true,
                     hideModeSwitch: true,
-                    toolbarItems: [
-                        ['heading', 'bold', 'image'],
-                    ]
                 },
-                toolbarItems: [
-                    ['heading', 'bold', 'image'],
-                ],
                 hooks: {
                     addImageBlobHook: this.onUploadImage
                 },
                 events: {
                     change: this.changeContents
                 }
-            }
+            },
         }
     },
 

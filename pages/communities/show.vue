@@ -44,7 +44,7 @@
                             <a href="#" class="filter gallery" @click.prevent="() => {postForm.type = 'type-thumbnail02';}">갤러리형</a>
                         </li>
                         <li v-if="selectedBoard">
-                            <nuxt-link :to="`/posts/create?board_id=${selectedBoard.id}`" class="write">글쓰기</nuxt-link>
+                            <nuxt-link :to="`/posts/create?board_id=${selectedBoard.id}&community_id=${community.id}`" class="write">글쓰기</nuxt-link>
                         </li>
                     </ul>
                 </div>

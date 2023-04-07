@@ -18,7 +18,7 @@
                         <a href="#" @click.prevent="copy">URL 복사</a>
                     </div>
                 </div>
-                <div class="view-body" v-html="post.description"></div>
+                <div class="view-body toastui-editor-contents" v-html="post.description"></div>
             </div>
             <div class="list-item-box mt32 mt-lg-25">
                 <ul class="list">
@@ -278,11 +278,15 @@ export default {
         storeComment(){
             this.commentForm.post("/api/comments")
                 .then(response => {
+                    console.log(response.data);
+
                     this.commentForm.description = "";
 
                     this.$store.commit("setPop", {
                         description: "댓글이 등록되었습니다!"
-                    })
+                    });
+
+                    this.comments.data = [response.data, ...this.comments.data];
                 })
         }
     },

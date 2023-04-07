@@ -1121,3 +1121,27 @@ section aside .aside-banner-box {display:none;}
 .main-list-box .main-list > div a > div {border-radius:4px;}
 .main-list-box .main-list > div a > p {font-size:12px;}
 }
+
+.posts-create .bottom {
+    display:flex; justify-content: space-between;
+}
+.posts-create .container {
+    max-width:none;
+}
+.posts-create .bottom .button-box {
+    margin-top:0;
+}
+.posts-create .bottom .btn {
+    min-width:196px;
+    padding:0 20px; margin-left:20px;
+    white-space: nowrap;
+}
+
+.m-input-select.type01 select {
+    height: 64px;
+    padding:0 32px;
+    background: #F7F1FF;
+    border-radius: 32px;
+    font-size: 18px; font-weight: 500;
+    color: #707070;
+}

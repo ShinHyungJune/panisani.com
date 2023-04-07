@@ -25,6 +25,8 @@ export default {
         ],
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+            {rel: 'stylesheet', type: 'text/css', href: 'cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css'},
+            {rel: 'stylesheet', type: 'text/css', href: '//uicdn.toast.com/editor/latest/toastui-editor.min.css'},
             {rel: 'stylesheet', type: 'text/css', href: '//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css'},
             {rel: 'stylesheet', type: 'text/css', href: '/css/swiper.min.css'},
             {rel: 'stylesheet', type: 'text/css', href: '/css/base.css'},
@@ -49,10 +51,10 @@ export default {
         },
         {
             src: "~plugins/axios.js"
-        }
+        },
     ],
 
-    middlewares: ["httpCheck"],
+    middlewares: [""],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
     components: true,
@@ -108,7 +110,7 @@ export default {
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {
         transpile: [
-            'defu'
+            'defu',
         ]
     }
 }

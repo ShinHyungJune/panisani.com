@@ -3,6 +3,9 @@ export default function ({ $axios, redirect, store }) {
 
         // store.commit("setFlash", error.message);
 
+        if(error.response.status == 401)
+            return null;
+
         if(error.response.status == 422)
             return store.commit("setPop", {
                 title: "삐빅!",
