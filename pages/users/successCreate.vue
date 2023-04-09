@@ -1,34 +1,33 @@
 <template>
-    <main class="subpage join_done form">
-        <div class="container">
-            <div class="txt-box">
-                <p class="title scd6">
-                    <span class="scd6">왓픽</span> 회원가입을 환영합니다.
-                </p>
-                <p class="txt">
-                    PC, 모바일로 같은 서비스를 이용가능합니다. 언제 어디서나 친절한 중고차 구매 도우미 <span class="red">왓픽</span>
-                </p>
-
-                <div class="method-box form row-group">
-                    <input type="password" placeholder="기존 비밀번호를 입력해주세요" v-model="form.password">
-                    <input type="password" placeholder="새로운 비밀번호를 입력해주세요" v-model="form.password_new"> <!-- 일치하는 정보가 없을 때 wrong 클래스 추가 -->
-                    <input type="password" placeholder="비밀번호 확인" v-model="form.password_new_confirmation"> <!-- 일치하는 정보가 없을 때 wrong 클래스 추가 -->
-                    <p class="guide">영문 대문자와 소문자, 숫자, 특수문자 중 2가지 이상을 조합하여 6~20자로 입력해주세요</p>
-                    <p class="wrong" v-if="form.errors.has('password')">{{form.errors.get("password")}}</p>
-                    <p class="wrong" v-if="form.errors.has('password_new')">{{form.errors.get("password_new")}}</p>
-                    <p class="wrong" v-if="form.errors.has('token')">{{form.errors.get("token")}}</p>
+    <section class="space-box center">
+        <div class="space-box-inner">
+            <div class="container">
+                <div class="title-box mb40">
+                    <img src="/images/img_page_logo.png" class="logo sm">
                 </div>
-
-                <nuxt-link to="/" class="form-submit">홈으로 가기</nuxt-link>
+                <div class="reg-order-box">
+                    <ul>
+<!--                        <li class="order-01 active"><p><b>1. 본인 인증</b></p></li>-->
+                        <li class="order-02 active"><p><b>1. 정보 입력</b></p></li>
+                        <li class="order-03 active on"><p><b>2. 가입 완료</b></p></li>
+                    </ul>
+                </div>
+                <div class="title-box mt80 pt20 mb80 pb80 mt-lg-50 pt-lg-0 mb-lg-50 pb-lg-0">
+                    <p>성공적으로 회원가입이 완료되었습니다.</p>
+                    <h2 class="mt16">파니사니에 오신 걸 환영해요!</h2>
+                </div>
+                <div class="button-box mx-box">
+                    <nuxt-link to="/login" class="btn btn-bd-active btn-md">로그인하기</nuxt-link>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
 </template>
 
 <script>
 import Form from "../../utils/Form";
 export default {
-    name: 'Login',
+    layout: "empty",
     data(){
         return {
             form : new Form(this.$axios, {

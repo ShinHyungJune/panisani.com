@@ -23,7 +23,6 @@
 <script>
 import Form from "~/utils/Form";
 export default {
-    middleware: ["auth"],
     data(){
         return {
             form: new Form(this.$axios, {

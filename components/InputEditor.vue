@@ -78,9 +78,12 @@ export default {
     },
 
     watch: {
-        value: function(value, oldValue) {
+        "value": function(value, oldValue) {
             this.$emit("change", value);
         },
+        "default": function(value, oldValue){
+            this.$refs.editor.invoke("setHTML", value);
+        }
     }
 }
 </script>

@@ -74,18 +74,18 @@
                     <strong class="tit">댓글 {{ comments.meta.total }}</strong>
                     <div class="filter-box">
                         <ul>
-                            <li :class="commentForm.order_by === 'count_like' ? 'active' : ''"><a href="#" @click.prevent="() => {commentForm.order_by = 'count_like'; getComments()}">좋아요순</a></li>
-                            <li :class="commentForm.order_by === 'created_at' ? 'active' : ''"><a href="#" @click.prevent="() => {commentForm.order_by = 'created_at'; getComments()}">최신순</a></li>
+                            <li :class="commentForm.order_by === 'count_like' ? 'active' : ''"><a href="#" @click.prevent="() => {commentForm.page = 1; commentForm.order_by = 'count_like'; getComments()}">좋아요순</a></li>
+                            <li :class="commentForm.order_by === 'created_at' ? 'active' : ''"><a href="#" @click.prevent="() => {commentForm.page = 1; commentForm.order_by = 'created_at'; getComments()}">최신순</a></li>
                             <!-- <li><a href="">찬반BEST순</a></li> -->
                             <li><a href="#" @click.prevent="activeSearch = true">댓글찾기</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="comment-search" v-if="activeSearch">
-                    <form @submit.prevent="getComments">
+                    <form @submit.prevent="() => getComments(false)">
                         <input type="text" placeholder="닉네임을 검색해주세요" v-model="commentForm.word">
                         <a href="" class="delete" @click.prevent="activeSearch = false">삭제</a>
-                        <a href="" class="submit" @click.prevent="getComments">검색</a>
+                        <a href="" class="submit" @click.prevent="() => getComments(false)">검색</a>
                     </form>
                 </div>
                 <div class="comment-body">
@@ -110,13 +110,13 @@
                         <div class="filter-box">
                             <ul>
                                 <li :class="postForm.order_by === 'count_view' ? 'active' : ''">
-                                    <a href="#" @click.prevent="() => {postForm.order_by = 'count_view'; getMorePosts()}">조회순</a>
+                                    <a href="#" @click.prevent="() => {postForm.page = 1; postForm.order_by = 'count_view'; getMorePosts()}">조회순</a>
                                 </li>
                                 <li :class="postForm.order_by === 'count_like' ? 'active' : ''">
-                                    <a href="#" @click.prevent="() => {postForm.order_by = 'count_like'; getMorePosts()}">좋아요순</a>
+                                    <a href="#" @click.prevent="() => {postForm.page = 1; postForm.order_by = 'count_like'; getMorePosts()}">좋아요순</a>
                                 </li>
                                 <li :class="postForm.order_by === 'count_comment' ? 'active' : ''">
-                                    <a href="#" @click.prevent="() => {postForm.order_by = 'count_comment'; getMorePosts()}">댓글순</a>
+                                    <a href="#" @click.prevent="() => {postForm.page = 1; postForm.order_by = 'count_comment'; getMorePosts()}">댓글순</a>
                                 </li>
                             </ul>
                         </div>
@@ -134,7 +134,6 @@
 <script>
 import Form from "~/utils/Form";
 export default {
-    middleware: ["auth"],
     data(){
         return {
             activeSearch: false,
@@ -209,7 +208,7 @@ export default {
 
         getMorePosts(loadMore = false){
             if(loadMore)
-                this.form.page += 1;
+                this.postForm.page += 1;
 
             this.$axios.get("/api/posts", {
                 params: this.postForm

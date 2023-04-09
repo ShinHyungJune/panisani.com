@@ -80,14 +80,15 @@ export default {
         }
     }, */
     auth: {
-        redirect: false,
+        redirect: {
+            login: "/login"
+        },
         /*redirect: {
             login: '/login',
             logout: '/logout',
             callback: '/login',
             home: '/'
-        },
-        */
+        },*/
         strategies: {
             laravelSanctum: {
                 provider: 'laravel/sanctum',

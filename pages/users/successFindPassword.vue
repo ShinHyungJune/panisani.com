@@ -1,22 +1,26 @@
 <template>
-    <main class="find_account done">
-        <div class="title-wrap">
-                <span class="icon">
-                    <i class="xi-check"></i>
-                </span>
-            <h2 class="title scd5">비밀번호가 변경 되었습니다.</h2>
-            <p class="txt">새로운 비밀번호로 로그인해주세요.</p>
+    <section class="space-box top top-space">
+        <div class="space-box-inner">
+            <div class="container">
+                <div class="title-box mb72 mb-lg-35">
+                    <img src="/images/img_page_logo.png" class="logo">
+                    <h2>성공적으로 비밀번호가 변경되었습니다.</h2>
+                    <p>변경된 비밀번호로 로그인해주세요.</p>
+                </div>
+                <div class="mx-box mt100 pt100 mt-lg-50 pt-lg-50">
+                    <div class="button-box">
+                        <nuxt-link to="/login" class="btn btn-bd-active btn-md">로그인</nuxt-link>
+                    </div>
+                </div>
+            </div>
         </div>
-        <nuxt-link to="/login" class="next-btn">
-            로그인 페이지 <i class="xi-angle-right"></i>
-        </nuxt-link>
-    </main>
+    </section>
 </template>
 
 <script>
 import Form from "../../utils/Form";
 export default {
-    name: 'Login',
+    layout:"empty",
     data(){
         return {
             form : new Form(this.$axios, {

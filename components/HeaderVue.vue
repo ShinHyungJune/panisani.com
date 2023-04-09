@@ -15,7 +15,8 @@
             </div>
             <div class="lnb">
                 <nuxt-link to="/searches/create" class="search">검색</nuxt-link>
-                <nuxt-link to="/login" class="login">로그인</nuxt-link>
+                <nuxt-link to="/mypage" class="login" v-if="$auth.user">마이페이지</nuxt-link>
+                <nuxt-link to="/login" class="login" v-else>로그인</nuxt-link>
                 <a href="#" class="menu" @click.prevent="active = true">메뉴바</a>
             </div>
             <div :class="`fnb ${active ? 'fixed' : ''}`">

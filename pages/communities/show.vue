@@ -54,6 +54,9 @@
                 <ul class="list mt16">
                     <post :type="postForm.type" :post="post" v-for="post in latestPosts.data" :key="post.id"/>
                 </ul>
+
+                <loadMore :links="latestPosts.links" @loadMore="() => {getLatestPosts(true)}" />
+
             </div>
 
         </div>
@@ -63,7 +66,6 @@
 <script>
 import Form from "~/utils/Form";
 export default {
-    middleware: ["auth"],
     data(){
         return {
             postForm: new Form(this.$axios, {
@@ -132,15 +134,25 @@ export default {
             });
         },
 
-        getLatestPosts(){
+        getLatestPosts(loadMore = false){
+            if(loadMore)
+                this.postForm.page += 1;
+
             this.$axios.get("/api/posts", {
                 params: {
                     board_id: this.postForm.board_id,
                     order_by: "created_at",
-                    take:10
+                    take: 10,
+                    page: this.postForm.page,
                 }
             }).then(response => {
-                this.latestPosts = response.data;
+                if(loadMore)
+                    return this.latestPosts = {
+                        ...response.data,
+                        data: [...this.latestPosts.data, ...response.data.data]
+                    };
+
+                return this.latestPosts = response.data;
             });
         }
     },

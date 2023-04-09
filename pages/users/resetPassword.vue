@@ -1,38 +1,48 @@
 <template>
-    <main class="find_account">
-        <div class="title-wrap">
-            <h2 class="title scd5">
-                <span class="red scd5">왓픽</span> 비밀번호 찾기
-            </h2>
-            <p class="txt">새로운 비밀번호를 등록해주세요.</p>
-        </div>
-        <div class="find-method container row-group">
-            <form action="">
-                <div class="method-box form row-group">
-                    <input type="password" placeholder="기존 비밀번호를 입력해주세요" v-model="form.password">
-                    <input type="password" placeholder="새로운 비밀번호를 입력해주세요" v-model="form.password_new"> <!-- 일치하는 정보가 없을 때 wrong 클래스 추가 -->
-                    <input type="password" placeholder="비밀번호 확인" v-model="form.password_new_confirmation"> <!-- 일치하는 정보가 없을 때 wrong 클래스 추가 -->
-                    <p class="guide">영문 대문자와 소문자, 숫자, 특수문자 중 2가지 이상을 조합하여 6~20자로 입력해주세요</p>
-                    <p class="wrong" v-if="form.errors.has('password')">{{form.errors.get("password")}}</p>
-                    <p class="wrong" v-if="form.errors.has('password_new')">{{form.errors.get("password_new")}}</p>
-                    <p class="wrong" v-if="form.errors.has('token')">{{form.errors.get("token")}}</p>
+    <section class="space-box top top-space">
+        <div class="space-box-inner">
+            <div class="container">
+                <div class="title-box mb72">
+                    <img src="/images/img_page_logo.png" class="logo">
+                    <h2>비밀번호 재설정</h2>
                 </div>
-            </form>
-            <button type="button" class="next-btn" @click="store">
-                다음 <i class="xi-angle-right"></i>
-            </button>
+                <div class="form-box">
+                    <form @submit.prevent="store">
+                        <div class="input-box mb16 mb-lg-10">
+                            <div class="box">
+                                <input type="password" placeholder="새로운 비밀번호를 작성해주세요. 입력해주세요." v-model="form.password_new">
+                            </div>
+                            <error :form="form" name="password_new" />
+                        </div>
+                        <div class="input-box">
+                            <div class="box">
+                                <input type="password" placeholder="비밀번호를 확인해주세요." v-model="form.password_new_confirmation">
+                            </div>
+                            <error :form="form" name="password_new_confirmation" />
+                            <error :form="form" name="token" />
+                            <div class="message-box mt10 px30 px-lg-15">
+                                <p>8자 이상 문자와 숫자를 섞어서 입력해주세요.<br>단  ‘!, @, #, $, %, ^, &, * ‘이 외의 특수문자는 사용할 수 없습니다. </p>
+                            </div>
+                        </div>
+
+                        <div class="button-box mt60 mt-lg-30">
+                            <button type="submit" class="btn btn-active">확인</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-    </main>
+    </section>
 </template>
 
 <script>
 import Form from "../../utils/Form";
 export default {
-    name: 'Login',
+    layout: "empty",
+
     data(){
         return {
             form : new Form(this.$axios, {
-                password: "",
                 password_new: "",
                 password_new_confirmation: "",
                 token: this.$route.query.token,
@@ -43,14 +53,13 @@ export default {
         store(){
             this.form.patch("/api/findPasswords")
                 .then(response => {
-                    this.$router.push(`/users/successFindPassword`);
-                }).catch(error => {
-                    if(error.message && error.message.includes("invalid"))
-                        return alert("입력값을 확인해주세요.");
+                    this.$store.commit("setPop", {
+                        title: "초기화 성공",
+                        description: "비밀번호가 초기화되었습니다."
+                    });
 
-                    if(error.message)
-                        return alert(error.message);
-            })
+                    this.$router.push(`/users/successFindPassword`);
+                });
         },
     },
 
