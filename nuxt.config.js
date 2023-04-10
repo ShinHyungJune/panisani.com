@@ -21,7 +21,7 @@ export default {
             {src: "//unpkg.com/aos@2.3.1/dist/aos.js"},
             {src: "//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"},
             {src: "/js/swiper.js"},
-            {src: "/js/common.js"},
+            // {src: "/js/common.js"},
         ],
         link: [
             {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},

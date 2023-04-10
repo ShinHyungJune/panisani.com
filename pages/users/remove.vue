@@ -44,11 +44,39 @@
                         <dd>위 안내사항을 확인하였으며, 탈퇴 시 계정에 남아있는 정보는 복구되지 않음을 인지하였으며 이에 동의합니다.</dd>
                     </dl>
                 </div>
-                <div class="text-box mt100 pt25 mt-lg-50">
-                    <dl>
-                        <dd>계정을 탈퇴하려면 해당 계정의 <b>비밀번호</b>를 입력하세요</dd>
-                    </dl>
+
+                <div class="div mt20 pt25">
+                    <div class="title-box">
+                        <h2 class="tl">
+                            탈퇴하는 이유가 무엇인가요?
+                        </h2>
+                    </div>
+                    <form class="mt20 mt-lg-30">
+                        <div class="check-box mb16 mb-lg-10">
+                            <input type="radio" name="radio" id="radio01" value="낮은 퀄리티" v-model="form.reason_leave_out">
+                            <label for="radio01"><span>낮은 퀄리티</span></label>
+                        </div>
+                        <div class="check-box mb16 mb-lg-10">
+                            <input type="radio" name="radio" id="radio02" value="원하는 콘텐츠가 없음" v-model="form.reason_leave_out">
+                            <label for="radio02"><span>원하는 콘텐츠가 없음</span></label>
+                        </div>
+                        <div class="check-box mb16 mb-lg-10">
+                            <input type="radio" name="radio" id="radio03" value="서비스 이용 불편" v-model="form.reason_leave_out">
+                            <label for="radio03"><span>서비스 이용 불편</span></label>
+                        </div>
+                        <div class="check-box mb16 mb-lg-10">
+                            <input type="radio" name="radio" id="radio04" value="불친절한 고객 서비스" v-model="form.reason_leave_out">
+                            <label for="radio04"><span>불친절한 고객 서비스</span></label>
+                        </div>
+                        <div class="textarea-box">
+                            <div class="box">
+                                <textarea placeholder="기타이유를 입력해주세요." v-model="form.reason_leave_out"></textarea>
+<!--                                <sub class="tr">0/300</sub>-->
+                            </div>
+                        </div>
+                    </form>
                 </div>
+
                 <div class="input-box mt16 mt-lg-10">
                     <div class="box" @keydown="() => {form.errors.clear()}">
                         <input type="password" placeholder="비밀번호" v-model="form.password">
@@ -77,6 +105,7 @@ export default {
         return {
             form : new Form(this.$axios, {
                 password: "",
+                reason_leave_out: "",
             }),
         }
     },

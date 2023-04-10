@@ -64,6 +64,10 @@
                             <error :form="form" name="password_confirmation" />
                         </div>
                         <div class="input-box mb16">
+                            <div class="title-form-box">
+                                <strong>생년월일</strong>
+                            </div>
+
                             <div class="box">
                                 <input type="date" v-model="form.birth">
                             </div>
