@@ -106,6 +106,7 @@ export default {
             },
         },
 
+        axios:true,
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
