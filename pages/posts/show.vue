@@ -83,7 +83,7 @@
                 </div>
                 <div class="comment-search" v-if="activeSearch">
                     <form @submit.prevent="() => getComments(false)">
-                        <input type="text" placeholder="닉네임을 검색해주세요" v-model="commentForm.word">
+                        <input type="text" placeholder="내용을 검색해주세요" v-model="commentForm.word">
                         <a href="" class="delete" @click.prevent="activeSearch = false">삭제</a>
                         <a href="" class="submit" @click.prevent="() => getComments(false)">검색</a>
                     </form>
@@ -277,8 +277,6 @@ export default {
         storeComment(){
             this.commentForm.post("/api/comments")
                 .then(response => {
-                    console.log(response.data);
-
                     this.commentForm.description = "";
 
                     this.$store.commit("setPop", {

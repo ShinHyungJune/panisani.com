@@ -1050,7 +1050,7 @@ section aside .aside-banner-box {display:none;}
 .search-box form a {width:48px; height:48px; font-size:0;}
 .search-box form .delete {background:url('../images/icon_search_delete.png') no-repeat center / 24px 24px;}
 .search-box form .submit {background:url('../images/icon_search_submit.png') no-repeat center / cover;}
-.search-box dl {display:none; padding:12px; width:100%; position:absolute; top:76px; background:#fff; border:2px solid #9747FF; border-radius:40px; box-shadow:0 3px 16px rgba(151,71,255,0.24);}
+.search-box dl {display:none; padding:12px; width:100%; position:absolute; top:76px; z-index:2; background:#fff; border:2px solid #9747FF; border-radius:40px; box-shadow:0 3px 16px rgba(151,71,255,0.24);}
 .search-box dl a {padding:12px 24px; display:flex; align-items:center; justify-content:space-between; border-radius:22px;}
 .search-box dl a p {font-size:16px; font-weight:bold; color:#303030; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
 .search-box dl a p b {font-size:16px; font-weight:bold; color:#9747FF; display:inline-block;}

@@ -106,6 +106,8 @@ export default {
             this.$axios.get("/api/communities/" + this.$route.query.id)
                 .then(response => {
                     this.community = response.data.data;
+
+                    this.$store.commit("addLatestCommunity", this.community);
                 });
         },
 
@@ -167,6 +169,7 @@ export default {
         this.getCommunity();
 
         this.getBoards();
+
     }
 }
 </script>
