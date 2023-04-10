@@ -1053,7 +1053,7 @@ section aside .aside-banner-box {display:none;}
 .search-box dl {display:none; padding:12px; width:100%; position:absolute; top:76px; background:#fff; border:2px solid #9747FF; border-radius:40px; box-shadow:0 3px 16px rgba(151,71,255,0.24);}
 .search-box dl a {padding:12px 24px; display:flex; align-items:center; justify-content:space-between; border-radius:22px;}
 .search-box dl a p {font-size:16px; font-weight:bold; color:#303030; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
-.search-box dl a p b {font-size:16px; font-weight:bold; color:#9747FF; display:inline-block; margin-right:5px;}
+.search-box dl a p b {font-size:16px; font-weight:bold; color:#9747FF; display:inline-block;}
 .search-box dl a span {padding-left:24px; font-size:14px; color:#9747FF; font-weight:bold; opacity:0;}
 .search-box dl a:hover {background:#F7F1FF;}
 .search-box dl a:hover span {opacity:1;}

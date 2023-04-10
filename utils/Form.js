@@ -149,6 +149,21 @@ class Form {
             });
         }
 
+        if(requestType === 'delete'){
+            this.form.append('_method', 'delete');
+
+            return new Promise((resolve, reject) => {
+                this.axios['post'](url, this.form).then(response => {
+                    this.onSuccess(response.data);
+                    resolve(response.data);
+                })
+                    .catch(error => {
+                        this.onFail(error.response.data);
+                        reject(error.response.data);
+                    });
+            });
+        }
+
         return new Promise((resolve, reject) => {
             this.axios[requestType](url, this.form).then(response => {
                 this.onSuccess(response.data);
