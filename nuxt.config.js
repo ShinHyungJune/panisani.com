@@ -1,4 +1,4 @@
-let baseUrl = process.env.NODE_ENV === "production" ? "https://api.panisani.com" : "http://localhost";
+let baseUrl = process.env.NODE_ENV === "production" ? "https://api-panisani.honest-family.com" : "http://localhost";
 
 export default {
     target: "static",
