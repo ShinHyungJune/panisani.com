@@ -15,6 +15,8 @@
                                 <time>{{ post.format_created_at }}</time>
                             </div>
                         </div>
+
+                        <a href="#" @click.prevent="scrap" style="margin-left:auto; margin-right:10px;">스크랩</a>
                         <a href="#" @click.prevent="copy">URL 복사</a>
                     </div>
                 </div>
@@ -180,6 +182,10 @@ export default {
                 file: "",
                 img: "",
             }),
+
+            scrapForm: new Form(this.$axios, {
+                post_id: this.$route.query.id,
+            }),
         }
     },
 
@@ -285,7 +291,22 @@ export default {
 
                     this.comments.data = [response.data, ...this.comments.data];
                 })
-        }
+        },
+
+        scrap(){
+            if(!this.$auth.user)
+                return this.$store.commit("setPop", {
+                    description: "로그인 후 이용 가능합니다."
+                });
+
+            this.scrapForm.post("/api/scraps")
+                .then(response => {
+                    this.$store.commit("setPop", {
+                        title: "스크랩 완료",
+                        description: "성공적으로 처리되었습니다!"
+                    })
+                });
+        },
     },
 
     computed: {

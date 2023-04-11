@@ -1,6 +1,6 @@
 <template>
-    <article v-if="community">
-        <div class="wrapper">
+    <article>
+        <div class="wrapper" v-if="community">
             <div class="cate-box">
                 <ul>
                     <li v-for="board in boards.data" :key="board.id" :class="postForm.board_id == board.id ? 'active' : ''">

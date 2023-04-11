@@ -1,22 +1,13 @@
 <template>
     <article>
         <div class="container lg">
-            <profile />
+            <profile :defaultUser="$auth.user.data" />
 
-            <div class="filter-box mt48 mt-lg-24">
-                <ul>
-                    <li :class="form.order_by === 'count_like' ? `active` : ''">
-                        <a href="#" @click.prevent="()=>{form.order_by = 'count_like'; form.page = 1; getPosts()}">좋아요순</a>
-                    </li>
-                    <li :class="form.order_by === 'created_at' ? `active` : ''">
-                        <a href="#" @click.prevent="()=>{form.order_by = 'created_at'; form.page = 1; getPosts()}">최신순</a>
-                    </li>
-                </ul>
-            </div>
+            <mypage-gnbs />
+
             <div class="board-list-box mt24 mt-lg-12">
-                <empty v-if="posts.data.length === 0" />
-
                 <ul class="list">
+                    <empty v-if="posts.data.length === 0" />
                     <post type="type-text" :post="post" v-for="post in posts.data" :key="post.id" />
                 </ul>
             </div>
@@ -29,6 +20,8 @@
 <script>
 import Form from "../../utils/Form";
 export default {
+    middleware: ['auth'],
+
     data(){
         return {
             posts: {
@@ -38,9 +31,9 @@ export default {
             },
 
             form : new Form(this.$axios, {
-                user_id: this.$route.query.id,
-                order_by: "count_like",
                 page:1,
+                user_id: this.$auth.user.data.id,
+                order_by: "created_at"
             }),
         }
     },
@@ -57,6 +50,7 @@ export default {
                         ...response.data,
                         data: [...this.posts.data, ...response.data.data]
                     };
+
 
                 return this.posts = response.data;
             })

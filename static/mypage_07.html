@@ -21,6 +21,7 @@
 	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/base.css">
 	<link rel="stylesheet" type="text/css" href="css/common.css">
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="js/swiper.min.js"></script>
 	<script src="js/swiper.js"></script>
@@ -199,7 +200,7 @@
 										<p>리그 오브 레전드는 140명이 넘는 챔피언으로 멋진 플레이어를 펼칠 수 있는 팀 게임입니다. 지금 무료로 플레이해 보세요.</p>
 									</div>
 								</div>
-								<div class="list-body toggle-body">
+								<div class="list-body toggle-body" style="display:block;">
 									<div class="message-box">
 										<p class="tc fw4">카테고리 순서대로 게시판에 노출됩니다. <br class="is-m"><b class="f16">(최대 공개 게시판 개수 8개)</b></p>
 									</div>
@@ -208,10 +209,33 @@
 											<ul class="list">
 												<li class="list-item">
 													<div class="setting-head">
-														<strong>아이템 <b>공개</b></strong>
-														<div class="button-box">
-															<a href="javascript:;" class="btn btn-white btn-sm" onclick="setting(this);">관리</a>
-														</div>
+														<strong>
+                                                            아이템
+                                                        </strong>
+
+                                                        <div class="button-boxes">
+                                                            <div class="button-box mr10">
+                                                                <div class="m-input-radio type01">
+                                                                    <input type="checkbox" id="test">
+                                                                    <label for="test">
+                                                                        <span class="mark">ON</span>
+                                                                    </label>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="button-box">
+                                                                <a href="javascript:;" class="btn btn-white btn-sm" onclick="setting(this);">편집</a>
+                                                            </div>
+
+                                                            <div class="button-box button-box-arrows">
+                                                                <a href="#" class="btn btn-white btn-circle">
+                                                                    <i class="xi-angle-up"></i>
+                                                                </a>
+                                                                <a href="#" class="btn btn-white btn-circle">
+                                                                    <i class="xi-angle-down"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
 													</div>
 													<div class="setting-body">
 														<div class="form-group-box full">
