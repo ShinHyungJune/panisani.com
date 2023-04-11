@@ -29,13 +29,13 @@
                         <strong>NFT<br>웹진</strong>
                         <ul>
                             <li v-for="recommendUser in recommendUsers.data" :key="recommendUser.id">
-                                <nuxt-link :to="`/users/show?id=${recommendUser.user.id}`">
+                                <a :href="`/users/show?id=${recommendUser.user.id}`">
                                     <div><img :src="recommendUser.user.img ? recommendUser.user.img.url : ''"></div>
                                     <div>
                                         <strong>{{recommendUser.user.nickname}}</strong>
                                         <span>바로가기</span>
                                     </div>
-                                </nuxt-link>
+                                </a>
                             </li>
                             <li>
                                 <nuxt-link to="/notices">
