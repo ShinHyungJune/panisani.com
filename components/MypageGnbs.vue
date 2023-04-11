@@ -19,6 +19,9 @@
             <li :class="className('/mypage/qnas')">
                 <nuxt-link to="/mypage/qnas">문의 내역</nuxt-link>
             </li>
+            <li :class="className('/mypage/suggestions')">
+                <nuxt-link to="/mypage/suggestions">제휴문의 내역</nuxt-link>
+            </li>
         </ul>
     </div>
 </template>

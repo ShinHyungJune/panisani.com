@@ -31,19 +31,26 @@
 <style>
 .upload {
     display:flex; align-items: flex-start;
+    width:100%;
+}
+.upload input {
+    display:none;
 }
 .find-file {
-    width: 125px; height: 42px;
-    margin-right:12px;
+    display:block;
+    width: 125px !important; height: 42px;
+    margin-right:12px !important;
     line-height: 40px; font-size: 16px; text-align: center;
-    border-radius: 21px; border: 1px solid #fe433a;
-    background: #fff; color: #fe433a;
+    border-radius: 21px;
+    background: #fff;
     box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
     transition: .2s;
+    color:#fff;
+    cursor:pointer;
 }
 .upload-list {
     width: 100%; min-height: 42px;
-    flex-flow: wrap;
+    flex-flow: wrap; flex:auto;
     padding: 8px; gap: 8px;
     background: #f5f5f5; border-radius: 16px;
 }

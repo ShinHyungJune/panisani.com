@@ -28,6 +28,9 @@
 
 </template>
 <style>
+    .input-file-wrap input {
+        display:none;
+    }
     .input-file-wrap label {
         display: flex; align-items: center; justify-content: center;
         width: 150px; height: 56px;

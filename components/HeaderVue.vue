@@ -10,7 +10,7 @@
                 <ul>
                     <li><nuxt-link to="/communities">커뮤니티</nuxt-link></li>
                     <li><nuxt-link to="/">파니사니</nuxt-link></li>
-                    <li><nuxt-link to="/qnas">문의하기</nuxt-link></li>
+                    <li><nuxt-link to="/qnas/create">문의하기</nuxt-link></li>
                 </ul>
             </div>
             <div class="lnb">
@@ -38,20 +38,20 @@
                                 </a>
                             </li>
                             <li>
-                                <nuxt-link to="/notices">
+                                <a href="/notices">
                                     <div><img src="/images/img_cate_07.png"></div>
                                     <div>
                                         <strong><b>공지사항</b></strong>
                                     </div>
-                                </nuxt-link>
+                                </a>
                             </li>
                             <li>
-                                <nuxt-link to="/mypage/subscriptions">
+                                <a href="/mypage/subscriptions">
                                     <div><img src="/images/img_cate_08.png"></div>
                                     <div>
                                         <strong><b>마이페이지</b></strong>
                                     </div>
-                                </nuxt-link>
+                                </a>
                             </li>
                             <!--
                             <li class="off">
