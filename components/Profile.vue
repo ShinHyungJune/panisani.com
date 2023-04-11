@@ -8,7 +8,9 @@
                     <a href="#" @click.prevent="activeEdit = true" class="update" v-if="$auth.user && $auth.user.data.id == user.id">설정</a>
                 </div>
                 <strong>{{ user.nickname }}</strong>
-                <p>{{ user.description }}</p>
+                <p :class="user.social_platform ? `mail ${user.social_platform}` : ''">{{ user.email }}</p>
+
+                <p v-if="user.description">{{ user.description }}</p>
             </div>
         </div>
         <div class="user-bottom">

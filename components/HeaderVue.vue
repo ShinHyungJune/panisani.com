@@ -15,7 +15,7 @@
             </div>
             <div class="lnb">
                 <nuxt-link to="/searches/create" class="search">검색</nuxt-link>
-                <nuxt-link to="/mypage" class="login" v-if="$auth.user">마이페이지</nuxt-link>
+                <nuxt-link to="/mypage/subscriptions" class="login" v-if="$auth.user">마이페이지</nuxt-link>
                 <nuxt-link to="/login" class="login" v-else>로그인</nuxt-link>
                 <a href="#" class="menu" @click.prevent="active = true">메뉴바</a>
             </div>
@@ -29,7 +29,7 @@
                         <strong>NFT<br>웹진</strong>
                         <ul>
                             <li v-for="recommendUser in recommendUsers.data" :key="recommendUser.id">
-                                <nuxt-link :to="`/users/${recommendUser.user.id}`">
+                                <nuxt-link :to="`/users/show?id=${recommendUser.user.id}`">
                                     <div><img :src="recommendUser.user.img ? recommendUser.user.img.url : ''"></div>
                                     <div>
                                         <strong>{{recommendUser.user.nickname}}</strong>
@@ -46,7 +46,7 @@
                                 </nuxt-link>
                             </li>
                             <li>
-                                <nuxt-link to="/mypage">
+                                <nuxt-link to="/mypage/subscriptions">
                                     <div><img src="/images/img_cate_08.png"></div>
                                     <div>
                                         <strong><b>마이페이지</b></strong>
