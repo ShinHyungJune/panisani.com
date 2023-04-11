@@ -3,7 +3,7 @@
         <div>
             <div class="list-head">
                 <div class="flex flex-vc">
-                    <div class="flex-box">
+                    <div class="flex-box" @click="() => $router.push(`/users/show?id=${subscription.targetUser.id}`)">
                         <div class="user-box sm">
                             <div class="user-top">
                                 <div class="user-image" :style="`background-image:url('${subscription.targetUser.img ? subscription.targetUser.img.url : ''}');`"></div>
@@ -18,6 +18,7 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="flex-box">
                         <div class="button-box">
                             <a href="#" class="btn btn-active btn-sm disabled" @click.prevent="subscript" v-if="subscription.targetUser.is_subscription">구독중</a>

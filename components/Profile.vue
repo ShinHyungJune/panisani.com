@@ -50,7 +50,7 @@ export default {
         return {
             activeReport: false,
             activeEdit: false,
-            user: this.defaultUser,
+            user: {...this.defaultUser}, // this.$auth.user값 넘어올 경우도 있어서 복사해야함, 안그럼 전역변수 수정처리한다고 오류남
             form: new Form(this.$axios, {
                 target_user_id: ""
             }),
