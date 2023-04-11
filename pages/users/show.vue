@@ -1,27 +1,29 @@
 <template>
     <article>
         <div class="container lg">
-            <profile />
+            <client-only>
+                <profile />
 
-            <div class="filter-box mt48 mt-lg-24">
-                <ul>
-                    <li :class="form.order_by === 'count_like' ? `active` : ''">
-                        <a href="#" @click.prevent="()=>{form.order_by = 'count_like'; form.page = 1; getPosts()}">좋아요순</a>
-                    </li>
-                    <li :class="form.order_by === 'created_at' ? `active` : ''">
-                        <a href="#" @click.prevent="()=>{form.order_by = 'created_at'; form.page = 1; getPosts()}">최신순</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="board-list-box mt24 mt-lg-12">
-                <empty v-if="posts.data.length === 0" />
+                <div class="filter-box mt48 mt-lg-24">
+                    <ul>
+                        <li :class="form.order_by === 'count_like' ? `active` : ''">
+                            <a href="#" @click.prevent="()=>{form.order_by = 'count_like'; form.page = 1; getPosts()}">좋아요순</a>
+                        </li>
+                        <li :class="form.order_by === 'created_at' ? `active` : ''">
+                            <a href="#" @click.prevent="()=>{form.order_by = 'created_at'; form.page = 1; getPosts()}">최신순</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="board-list-box mt24 mt-lg-12">
+                    <empty v-if="posts.data.length === 0" />
 
-                <ul class="list">
-                    <post type="type-text" :post="post" v-for="post in posts.data" :key="post.id" />
-                </ul>
-            </div>
+                    <ul class="list">
+                        <post type="type-text" :post="post" v-for="post in posts.data" :key="post.id" />
+                    </ul>
+                </div>
 
-            <loadMore :links="posts.links" @loadMore="() => {getPosts(true)}" />
+                <loadMore :links="posts.links" @loadMore="() => {getPosts(true)}" />
+            </client-only>
         </div>
     </article>
 </template>
