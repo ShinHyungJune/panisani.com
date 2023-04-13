@@ -10,7 +10,7 @@
             <div class="ranking-list">
                 <ul>
                     <li v-for="(ranking, index) in rankings.data" :key="ranking.id" v-if="index >= (activeIndex * 10) && index < (activeIndex * 10 + 10)">
-                        <nuxt-link :to="`/searches?word=${ranking.title}`">
+                        <nuxt-link :to="`/searches/create?word=${ranking.title}`">
                             <b>{{ index + 1}}</b>
                             <p>{{ ranking.title }}</p>
                             <sub class="" v-if="ranking.new">new</sub>
