@@ -100,9 +100,7 @@
             </div>
 
             <div class="container mt24">
-                <div class="button-box">
-                    <loadMore :links="comments.links" @loadMore="() => {getComments(true)}" />
-                </div>
+                <loadMore :links="comments.links" @loadMore="() => {getComments(true)}" />
             </div>
 
             <div class="board-list-box mt100 pt20 mt-lg-50 pt-lg-0">
