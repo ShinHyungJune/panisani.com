@@ -160,7 +160,7 @@ export default {
             filter: "",
 
             postForm: new Form(this.$axios, {
-                word: this.$route.query.word ? this.$route.query.word : '',
+                word: '',
                 order_by: "count_view",
                 page: 1,
             }),
@@ -177,7 +177,7 @@ export default {
             }),
 
             form: new Form(this.$axios, {
-                word: "",
+                word: this.$route.query.word ? this.$route.query.word : '',
             }),
 
             searchCommunities: {
