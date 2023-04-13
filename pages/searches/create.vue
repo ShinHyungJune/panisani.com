@@ -321,7 +321,7 @@ export default {
         this.getCommunities();
 
         if(this.$route.query.word){
-            this.getSearchCommunities();
+            // this.getSearchCommunities();
             this.getComments();
             this.getPosts();
         }
