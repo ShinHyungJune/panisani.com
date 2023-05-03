@@ -12,6 +12,11 @@
             <ul>
                 <li class="fixed-01"><a href="#" @click.prevent="top">상단으로</a></li>
                 <li class="fixed-02"><a href="#" @click.prevent="ready">채팅</a></li>
+                <li class="fixed-03">
+                    <a href="#" @click.prevent="toggleRanking">
+                        <i class="xi-equalizer"></i>
+                    </a>
+                </li>
             </ul>
         </div>
     </footer>
@@ -25,6 +30,10 @@ export default {
 
         ready(){
             alert("준비중입니다.");
+        },
+
+        toggleRanking(){
+            $(".ranking-box").toggleClass("active");
         }
     }
 }

@@ -128,6 +128,16 @@ footer .footer-fixed ul li:last-of-type {margin:0;}
 footer .footer-fixed ul li a {width:48px; height:48px; font-size:0; border-radius:50%;}
 footer .footer-fixed ul li.fixed-01 a {background:#fff url('../images/icon_fixed_01.png') no-repeat center / cover;}
 footer .footer-fixed ul li.fixed-02 a {background:#fff url('../images/icon_fixed_02.png') no-repeat center / cover;}
+footer .footer-fixed ul li.fixed-03 {
+    display:none;
+}
+footer .footer-fixed ul li.fixed-03 a {
+    display:flex; align-items: center; justify-content: center;
+    background-color:#9747ff;
+}
+footer .footer-fixed ul li.fixed-03 a i {
+    color:#fff; font-size:18px;
+}
 @media (max-width:991px){
 footer {padding:18px 0;}
 footer .wrapper h2 {margin-right:0; width:100%; margin:0 0 15px;}
@@ -138,6 +148,9 @@ footer .wrapper ul li a {font-size:14px;}
 footer .footer-fixed {right:10px; bottom:10px;}
 footer .footer-fixed ul li {margin:0 0 8px;}
 footer .footer-fixed ul li a {width:35px; height:35px;}
+}
+footer .footer-fixed ul li.fixed-03 {
+    display:block;
 }
 
 /* section */
@@ -152,7 +165,9 @@ section aside .aside-banner-box a img {display:block; max-width:100%;}
 @media (max-width:1800px){
 section article {padding:0;}
 section aside.left-side {width:140px;}
-section aside.right-side {display:none;padding-right:20px; width:200px;}
+    section aside.right-side {
+        display:block; padding-right:20px; width:200px;
+    }
 }
 @media (max-width:991px){
 section {padding:20px 0;}
@@ -160,7 +175,6 @@ section.flex {margin-top:68.41px !important;}
 section article {order:2; flex:none; width:100%;}
 section aside {width:100%; padding:0 10px !important; margin:0 0 32px;}
 section aside.left-side {order:1; display:none;}
-section aside.right-side {width:100%;}
 section aside .aside-banner-box {display:none;}
 }
 
@@ -682,6 +696,15 @@ section aside .aside-banner-box {display:none;}
 .ranking-box .ranking-list ul li a sub {display:flex; flex-wrap:wrap; align-items:center; min-width:22px; color:#C1C1C1; font-size:12px; line-height:1.3;}
 .ranking-box .ranking-list ul li a sub.up:before {display:inline-block; content:""; width:4px; height:4px; margin-right:4px; background:url('../images/icon_ranking_up.png') no-repeat center / cover;}
 .ranking-box .ranking-list ul li a sub.down:before {display:inline-block; content:""; width:4px; height:4px; margin-right:4px; background:url('../images/icon_ranking_down.png') no-repeat center / cover;}
+@media (max-width:1800px){
+    .ranking-box {
+        display:none;
+        position:fixed; bottom:12px; right:70px;
+    }
+    .ranking-box.active {
+        display:block;
+    }
+}
 @media (max-width:991px){
 .ranking-box .ranking-tab ul li a {height:35px; font-size:16px;}
 }
