@@ -22,7 +22,7 @@
                 <li>
                     <span>구독자</span>
                     <b>{{ user.count_subscription }}</b>
-                    <div class="button-box">
+                    <div class="button-box" v-if="canSee">
                         <a href="#" class="btn btn-active btn-sm disabled" @click.prevent="subscription" v-if="user.is_subscription">구독중</a>
                         <a href="#" class="btn btn-active btn-sm" @click.prevent="subscription" v-else>구독하기</a>
                     </div>
@@ -64,6 +64,16 @@ export default {
 
             return this.comment.description;
         },
+
+        canSee(){
+            if(!this.$auth.user)
+                return true;
+
+            if(this.$auth.user.data.id != this.user.id)
+                return true;
+
+            return false;
+        }
     },
 
     methods: {

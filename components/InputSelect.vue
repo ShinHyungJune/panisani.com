@@ -1,7 +1,7 @@
 <template>
-    <div class="select-box">
-        <button type="button" v-if="!selectedOption">{{ placeholder }}</button>
-        <button type="button" v-else>{{ selectedOption.label }}</button>
+    <div :class="`select-box ${active ? 'active' : ''}`">
+        <button type="button" @click="active = !active" v-if="!selectedOption">{{ placeholder }}</button>
+        <button type="button" @click="active = !active" v-else>{{ selectedOption.label }}</button>
         <input type="hidden">
         <div class="select-list-box">
             <dl>
@@ -32,6 +32,7 @@ export default {
     },
     data(){
         return {
+            active: false,
             selectedOption: ""
         }
     },
@@ -39,6 +40,8 @@ export default {
     methods: {
         select(option){
             this.selectedOption = option;
+
+            this.active = false;
 
             this.$emit("change", option.value);
         },

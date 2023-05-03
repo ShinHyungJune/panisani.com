@@ -1,5 +1,7 @@
 <template>
     <li class="list-item">
+        <pop-report @close="targetComment = ''" :comment="targetComment" v-if="targetComment" />
+
         <div class="list-head">
             <div class="info-user-box">
                 <img :src="comment.user.img ? comment.user.img.url : ''">
@@ -24,8 +26,8 @@
                             <!--
                             <a href="#">수정</a>
                             -->
-                            <a href="#" @click.prevent="remove" v-if="$auth.user && $auth.user.id == comment.user.id">삭제</a>
-                            <a href="#" @click.prevent="report">신고</a>
+                            <a href="#" @click.prevent="remove" v-if="$auth.user && $auth.user.data.id == comment.user.id">삭제</a>
+                            <a href="#" @click.prevent="targetComment = comment">신고</a>
                         </div>
                     </dd>
                 </dl>
@@ -61,6 +63,7 @@ export default {
 
             showAll: false,
             active: false,
+            targetComment: "",
             max: 100,
         }
     },

@@ -47,7 +47,7 @@
                     <a href="#" @click.prevent="close" class="btn btn-bd-active btn-md">취소</a>
                 </div>
                 <div class="col-6 pl6">
-                    <a href="#" class="btn btn-active btn-md" @click="store">완료</a>
+                    <a href="#" class="btn btn-active btn-md" @click.prevent="store">완료</a>
                 </div>
             </div>
         </div>

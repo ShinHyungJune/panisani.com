@@ -8,7 +8,7 @@
                 </div>
 
                 <div class="form-box">
-                    <input-verify-number @verified="(data) => {form.email = data; this.store()}" />
+                    <input-verify-number :find-id="1" @verified="(data) => {form.email = data; this.store()}" />
                 </div>
             </div>
         </div>

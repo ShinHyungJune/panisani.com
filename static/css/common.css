@@ -485,8 +485,9 @@ section aside .aside-banner-box {display:none;}
 /* cate-list-box */
 .cate-list-box ul {display:flex; flex-wrap:wrap; justify-content:center; margin:0 -4px -8px;}
 .cate-list-box ul li {margin:0 4px 8px;}
-.cate-list-box ul li a {display:flex; flex-wrap:wrap; align-items:center; justify-content:center; background:#EEE8F5; border-radius:16px; padding:8px 16px; font-size:14px; color:#7D7D7D;}
+.cate-list-box ul li a {display:flex; flex-wrap:wrap; align-items:center; justify-content:center; background:#EEE8F5; border-radius:16px; border:2px solid transparent; padding:8px 16px; font-size:14px; color:#7D7D7D;}
 .cate-list-box ul li.active a {background:#9747FF; color:#fff; font-weight:500;}
+.cate-list-box ul li.activeToggle a {border-color:#9747FF; color:#9747FF; font-weight:500;}
 @media (max-width:991px){
 .cate-list-box ul {margin:0 -2px -4px;}
 .cate-list-box ul li {margin:0 2px 4px;}

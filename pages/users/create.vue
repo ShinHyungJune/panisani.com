@@ -69,7 +69,7 @@
                             </div>
 
                             <div class="box">
-                                <input type="date" v-model="form.birth">
+                                <input type="date" v-model="form.birth" :max="today">
                             </div>
                         </div>
                     </form>
@@ -126,7 +126,22 @@ export default {
     },
 
     computed: {
+        today() {
+            const today = new Date();
+            const year = today.getFullYear();
+            let month = today.getMonth() + 1;
+            let day = today.getDate();
 
+            // 달과 일이 한 자리 수인 경우 0을 붙여줌
+            if (month < 10) {
+                month = '0' + month;
+            }
+            if (day < 10) {
+                day = '0' + day;
+            }
+
+            return year + '-' + month + '-' + day;
+        },
     },
 
     mounted() {

@@ -47,6 +47,9 @@ export default {
         },
         isRegister: {
             default: 0,
+        },
+        findId: {
+            default: 0,
         }
     },
 
@@ -55,7 +58,8 @@ export default {
             form: new Form(this.$axios, {
                 email: "",
                 number: "",
-                isRegister: this.isRegister
+                isRegister: this.isRegister,
+                findId: this.findId,
             }),
 
             mode: "beforeSend",

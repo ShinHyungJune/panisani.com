@@ -36,9 +36,11 @@
             <div class="cate-list-box mt24 mt-lg-15">
                 <ul>
                     <li class="active"><a href="" @click.prevnet="">BEST</a></li>
-                    <li v-for="community in communities.data" :key="community.id"><a href="" @click.prevent="() => {form.community_id = community.id; getPosts()}">{{
+                    <li :class="community.id === form.community_id ? 'activeToggle' : ''" v-for="community in communities.data" :key="community.id">
+                        <a href="" @click.prevent="() => {form.community_id = community.id; getPosts()}">{{
                             community.title
-                        }}</a></li>
+                        }}</a>
+                    </li>
                 </ul>
             </div>
             <div class="board-title-box mt25">

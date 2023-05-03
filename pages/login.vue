@@ -67,7 +67,7 @@ import Form from "../utils/Form";
 export default {
     name: 'Login',
     layout: "empty",
-    auth: "guest",
+    auth: ["guest"],
     data(){
         return {
             form : new Form(this.$axios, {
@@ -100,7 +100,12 @@ export default {
 
                     })
             });*/
-        }
+        },
+    },
+
+    mounted() {
+        if(this.$auth.user)
+            return this.$router.back();
     }
 }
 </script>
