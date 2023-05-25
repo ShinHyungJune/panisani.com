@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <div class="title-box mt100 pt100 mt-lg-50 pt-lg-0">
+            <div class="title-box mt50 pt50 mt-lg-50 pt-lg-0">
                 <h2>SPECIAL</h2>
             </div>
             <div class="list-item-box mt32 mt-lg-25">
@@ -30,7 +30,7 @@
                 </ul>
             </div>
 
-            <div class="title-box mt100 pt100 mt-lg-50 pt-lg-0">
+            <div class="title-box mt50 pt50 mt-lg-50 pt-lg-0">
                 <h2>COMMUNITY</h2>
             </div>
             <div class="cate-list-box mt24 mt-lg-15">
@@ -61,7 +61,7 @@
                 </ul>
             </div>
 
-            <div class="title-box mt100 pt100 mt-lg-50 pt-lg-0">
+            <div class="title-box mt50 pt50 mt-lg-50 pt-lg-0">
                 <h2>NFT GAME</h2>
             </div>
             <div class="board-image-box mt24">
@@ -73,7 +73,7 @@
             </div>
 
             <!--
-            <div class="title-box mt100 pt100 mt-lg-50 pt-lg-0">
+            <div class="title-box mt50 pt50 mt-lg-50 pt-lg-0">
                 <h2>NFT GAME</h2>
             </div>
             <div class="board-family-box mt24">

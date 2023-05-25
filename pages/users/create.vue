@@ -16,11 +16,13 @@
                     <form>
                         <input-avatar @change="data => form.img = data" />
 
+                        <div class="mb32"></div>
+
                         <error :form="form" name="img" />
 
                         <input-verify-number @verified="(data) => {form.email = data}" :isRegister="1" />
 
-                        <div class="input-box mb32 mb-lg-16">
+                        <div class="input-box mb32 mb-lg-16 mt12">
                             <div class="box">
                                 <input type="text" placeholder="닉네임을 작성해주세요." v-model="form.nickname">
 <!--                                <div class="box-inner">
