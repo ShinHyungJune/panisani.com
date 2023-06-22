@@ -44,6 +44,7 @@
                         <div class="member-box">
                             <nuxt-link to="/users/registerChoice" class="member-box-register"><b>아직 회원이 아니신가요?</b></nuxt-link>
 
+                            <!--
                             <div class="member-box-sns mt64 mt-lg-32">
                                 <b>간편 로그인</b>
                                 <dl>
@@ -52,6 +53,7 @@
                                     <dd class="google"><a :href="`${$store.state.domain}/openLoginPop/google`">구글 로그인</a></dd>
                                 </dl>
                             </div>
+                            -->
                         </div>
                     </form>
                 </div>

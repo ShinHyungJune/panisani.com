@@ -5,12 +5,15 @@
                 <h2 class="mt0">YOUTUBE</h2>
             </div>
             <div class="main-list-box mt40 mt-lg-20">
-                <div class="main-image" v-if="youtubes.data.length > 0">
-                    <a :href="youtubes.data[0].url" target="_blank">
-                        <div :style="`background-image:url('${youtubes.data[0].thumbnail}'); background-repeat:no-repeat; background-size:cover`"></div>
-                        <p>{{ youtubes.data[0].title }}</p>
-                    </a>
+                <div class="main-images">
+                    <div class="main-image" v-for="(youtube, index) in youtubes.data" :key="youtube.id" v-if="index < 4">
+                        <a :href="youtube.url" target="_blank">
+                            <div :style="`background-image:url('${youtube.thumbnail}'); background-repeat:no-repeat; background-size:cover`"></div>
+                            <p>{{ youtube.title }}</p>
+                        </a>
+                    </div>
                 </div>
+
                 <div class="main-list">
                     <div v-for="youtube in youtubes.data" :key="youtube.id">
                         <a :href="youtube.url" target="_blank">
@@ -55,6 +58,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="board-list-box bd0 mt24 mt-lg-15">
                 <ul class="list half">
                     <post type="type-thumbnail02" :post="post" v-for="post in posts.data" :key="post.id"/>
@@ -109,6 +113,21 @@
 import Form from "@/utils/Form";
 
 export default {
+    head() {
+        return {
+            link: [
+                {rel: 'stylesheet', type: 'text/css', href: '//cdn.quilljs.com/1.3.4/quill.snow.css'},
+
+            ],
+
+            script: [
+                {
+                    src: '//cdn.quilljs.com/1.3.6/quill.min.js',
+                    defer: true
+                },
+            ],
+        }
+    },
     // middleware : ["auth"],
 
     name: 'IndexPage',
