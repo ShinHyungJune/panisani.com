@@ -1,6 +1,7 @@
 <template>
     <article>
         <div class="wrapper" v-if="community">
+            <!--
             <div class="cate-box">
                 <ul>
                     <li v-for="board in boards.data" :key="board.id" :class="postForm.board_id == board.id ? 'active' : ''">
@@ -8,6 +9,7 @@
                     </li>
                 </ul>
             </div>
+            -->
             <div class="title-box">
                 <h2>{{ community.title }}</h2>
             </div>
@@ -170,6 +172,20 @@ export default {
 
         this.getBoards();
 
+    },
+
+    watch: {
+        '$route.query.id': function (value, oldValue) {
+            this.getCommunity();
+
+            this.getBoards();
+        },
+
+        '$route.query.board_id': function (value, oldValue) {
+            this.postForm.board_id = value;
+
+            this.getPosts();
+        }
     }
 }
 </script>

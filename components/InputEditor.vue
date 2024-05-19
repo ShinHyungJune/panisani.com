@@ -1,88 +1,102 @@
 <template>
-    <toast-editor :options="options" ref="editor" :initialValue="value" initialEditType="wysiwyg" @change="changeContents" />
+    <div className="ql-editor">
+        <div id="editor" ref="editor" style="height:400px;"></div>
+        <input type="file" id="getFile" accept="image/*"
+               style="position: absolute; z-index:-1; opacity:0; left:-1000px; bottom:-1000px;" @change="changeImg">
+    </div>
+
 </template>
-<style>
-.toastui-editor-mode-switch .tab-item {display:none !important;}
-</style>
 <script>
+
 export default {
     components: {},
 
     props: {
         default: "",
+
+        required: {
+            default: true
+        },
     },
 
-    data(){
+    data() {
         return {
             value: this.default,
             editor: "",
-            hideModeSwitch: false,
-            options: {
-                previewStyle: 'vertical',
-                height: '500px',
-                initialValue: this.value,
-                options: {
-                    minHeight: '200px',
-                    language: 'en-US',
-                    useCommandShortcut: true,
-                    usageStatistics: true,
-                    hideModeSwitch: true,
-                },
-                hooks: {
-                    addImageBlobHook: this.onUploadImage
-                },
-                events: {
-                    change: this.changeContents
-                }
-            },
         }
     },
 
     methods: {
-        changeContents(e){
-            if(this.$refs.editor)
-                this.$emit("change", this.$refs.editor.invoke('getHTML'));
-        },
-
-        async uploadImage(blob){
+        changeImg(event) {
             let formData = new FormData();
 
-            formData.append("file", blob);
+            formData.append("file", event.target.files[0]);
 
-            return this.$axios.post("http://localhost/api/imageUpload", formData)
+            this.$axios.post("/api/images", formData)
                 .then(response => {
-                    return response.data;
+                    let url = response.data.data;
+
+                    const range = this.editor.getSelection();
+
+                    this.editor.insertEmbed(range.index, 'image', url);
+
+                    /*this.editor.root.innerHTML += `<img src="${response.data.data}" alt=""/>`
+                    return response.data;*/
                 });
         },
 
-        async onUploadImage(blob, callback) {
-            const url = await this.uploadImage(blob);
-
-            callback(url, '');
-
-            this.changeContents();
-
-            return false;
+        changeContents() {
+            this.$emit("change", this.editor.root.innerHTML);
         },
 
-        setFrame(){
-            /*
-            if(this.category === "전자제품")
-                this.editor.setHTML("<p>1.제품<br/><br/>2.브랜드<br/><br/>3.모델명<br/><br/>4.증상<br/><br/>5.연락처<br/><br/>6.방문가능 일자 및 시간<br/><br/>7.사진 및 동영상 첨부(필수/ 대용량 파일은 하단 첨부파일을 통해 업로드)</p>");
-                */
+        imageHandler() {
+            document.getElementById('getFile').click();
         }
     },
 
     mounted() {
+        let self = this;
+        const toolbarOptions = [
+            ['bold', 'italic', 'underline', 'strike'],
+            ['blockquote', 'code-block'],
+            [{'header': 1}, {'header': 2}],
+            [{'list': 'ordered'}, {'list': 'bullet'}],
+            [{'script': 'sub'}, {'script': 'super'}],
+            [{'indent': '-1'}, {'indent': '+1'}],
+            [{'direction': 'rtl'}],
+            [{'size': ['small', false, 'large', 'huge']}],
+            [{'header': [1, 2, 3, 4, 5, 6, false]}],
+            [{'color': []}, {'background': []}],
+            [{'font': []}],
+            [{'align': []}],
+            ['clean', 'image']
+        ]
 
+        this.editor = new Quill(this.$refs.editor, {
+            modules: {
+                toolbar: {
+                    container: toolbarOptions,
+                    handlers: {
+                        'image': self.imageHandler
+                    }
+                }
+            },
+            theme: 'snow',
+        })
+
+        this.editor.on("text-change", () => {
+            this.changeContents();
+        })
+
+        this.editor.pasteHTML(this.default);
+
+        // this.$refs.editor.quill.setContents(this.default);
+        // this.$store.commit('setQuillInstance', quill)
     },
 
     watch: {
-        "value": function(value, oldValue) {
+        value: function (value, oldValue) {
             this.$emit("change", value);
-        },
-        "default": function(value, oldValue){
-            this.$refs.editor.invoke("setHTML", value);
         }
     }
 }
