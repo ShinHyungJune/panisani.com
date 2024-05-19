@@ -3,6 +3,9 @@ let baseUrl = process.env.NODE_ENV === "production" ? "https://api-panisani.hone
 export default {
     target: "static",
     ssr: true,
+    server: {
+        port: 3021
+    },
     head: {
         title: '파니사니',
         htmlAttrs: {
